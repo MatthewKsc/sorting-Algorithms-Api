@@ -2,14 +2,20 @@ package com.matthewksc.sortingAlgorithmsApi;
 
 public class SortingAlgorithms {
 
-    public Integer[] bubbleSort(int[] arr){
+    public int[] bubbleSort(int[] arr){
     }
-    public Integer[] selectionSort(int[] arr){
+    public int[] selectionSort(int[] arr){
     }
-    public Integer[] insertSort(int[] arr){
+    public int[] insertSort(int[] arr){
     }
-    public Integer[] quicksort(int arr[], int left, int right){
+    public int[] quicksort(int arr[], int left, int right){
     }
-    public Integer[] mergeSort(int arr[],int lo, int n){
+    public int[] mergeSort(int arr[],int lo, int n){
+    }
+
+    public void swap(int leftIndex, int rightIndex, int[] arr){
+        int temp = arr[leftIndex];
+        arr[leftIndex]= arr[rightIndex];
+        arr[rightIndex]= temp;
     }
 }
