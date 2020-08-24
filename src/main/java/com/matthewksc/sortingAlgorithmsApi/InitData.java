@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class InitData {
 
-    private static int arraySize=30;
+    private static int arraySize=1000;
     private SortingAlgorithms sortingAlgorithms;
     private AlgorithmService algorithmService;
 
@@ -18,7 +18,9 @@ public class InitData {
 
     @EventListener(ApplicationReadyEvent.class)
     public void start(){
-
+        Algorithm bubbleSort= new Algorithm("Bubble Sort");
+        bubbleSort.setTimeOfExecution(sortingAlgorithms.bubbleSort(createArray()));
+        algorithmService.save(bubbleSort);
     }
 
     public int[] createArray(){
