@@ -21,6 +21,10 @@ public class InitData {
         Algorithm bubbleSort= new Algorithm("Bubble Sort");
         bubbleSort.setTimeOfExecution(sortingAlgorithms.bubbleSort(createArray()));
         algorithmService.save(bubbleSort);
+
+        Algorithm selectionSort = new Algorithm("Selection Sort");
+        selectionSort.setTimeOfExecution(sortingAlgorithms.selectionSort(createArray()));
+        algorithmService.save(selectionSort);
     }
 
     public int[] createArray(){

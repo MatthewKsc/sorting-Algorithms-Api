@@ -10,17 +10,26 @@ public class SortingAlgorithms {
         long start = System.currentTimeMillis();
         for (int i=0; i<arr.length; i++){
             for (int y=0; y<arr.length-1; y++){
-                if (arr[y]>arr[y+1]){
-                    swap(y, y+1, arr);
-                }
+                if (arr[y]>arr[y+1]) swap(y, y+1, arr);
             }
         }
         long end = System.currentTimeMillis();
-        //System.out.println(end-start);
+        System.out.println(end-start);
         return end-start;
     }
-//    public int[] selectionSort(int[] arr){
-//    }
+    public long selectionSort(int[] arr){
+        long start = System.currentTimeMillis();
+        for (int i=0;i <arr.length; i++){
+            int min=i;
+            for (int y=i; y<arr.length; y++){
+                if (arr[min]> arr[y]) min=y;
+            }
+            swap(i, min, arr);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+        return end-start;
+    }
 //    public int[] insertSort(int[] arr){
 //    }
 //    public int[] quicksort(int arr[], int left, int right){
