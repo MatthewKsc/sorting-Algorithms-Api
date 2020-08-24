@@ -7,23 +7,24 @@ import org.springframework.stereotype.Service;
 public class SortingAlgorithms {
 
     //Timer timer = new Timer();
+    private long start;
+    private long end;
 
     //bubbleSort
     public long bubbleSort(int[] arr){
-        long start = System.currentTimeMillis();
+        start = System.currentTimeMillis();
         for (int i=0; i<arr.length; i++){
             for (int y=0; y<arr.length-1; y++){
                 if (arr[y]>arr[y+1]) swap(y, y+1, arr);
             }
         }
-        long end = System.currentTimeMillis();
-        System.out.println(end-start);
+        end = System.currentTimeMillis();
         return end-start;
     }
 
     //selectionSort
     public long selectionSort(int[] arr){
-        long start = System.currentTimeMillis();
+        start = System.currentTimeMillis();
         for (int i=0;i <arr.length; i++){
             int min=i;
             for (int y=i; y<arr.length; y++){
@@ -31,14 +32,13 @@ public class SortingAlgorithms {
             }
             swap(i, min, arr);
         }
-        long end = System.currentTimeMillis();
-        System.out.println(end-start);
+        end = System.currentTimeMillis();
         return end-start;
     }
 
     //insertSort
     public long insertSort(int[] arr){
-        long start = System.currentTimeMillis();
+        start = System.currentTimeMillis();
         for (int i=1; i<arr.length; i++){
             int j=i;
             int holder = arr[i];
@@ -48,8 +48,7 @@ public class SortingAlgorithms {
             }
             arr[j]= holder;
         }
-        long end = System.currentTimeMillis();
-        System.out.println(end-start);
+        end = System.currentTimeMillis();
         return end-start;
     }
 

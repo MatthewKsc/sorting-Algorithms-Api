@@ -4,6 +4,8 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @Service
 public class InitData {
 
@@ -23,33 +25,30 @@ public class InitData {
 
         Algorithm bubbleSort= new Algorithm("Bubble Sort");
         bubbleSort.setTimeOfExecution(sortingAlgorithms.bubbleSort(createArray()));
-        algorithmService.save(bubbleSort);
 
         Algorithm selectionSort = new Algorithm("Selection Sort");
         selectionSort.setTimeOfExecution(sortingAlgorithms.selectionSort(createArray()));
-        algorithmService.save(selectionSort);
 
         Algorithm insertSort= new Algorithm("Insert Sort");
         insertSort.setTimeOfExecution(sortingAlgorithms.insertSort(createArray()));
-        algorithmService.save(insertSort);
 
         Algorithm quickSort= new Algorithm("Quick Sort");
         int[] quickSortArray = createArray();
         start = System.currentTimeMillis();
         sortingAlgorithms.quicksort(quickSortArray, 0, quickSortArray.length-1);
         end = System.currentTimeMillis();
-        System.out.println(end-start);
         quickSort.setTimeOfExecution(end-start);
-        algorithmService.save(quickSort);
 
         Algorithm mergeSort = new Algorithm("Merge Sort");
         int[] mergeSortArray= createArray();
         start = System.currentTimeMillis();
         sortingAlgorithms.mergeSort(mergeSortArray, 0, mergeSortArray.length-1);
         end = System.currentTimeMillis();
-        System.out.println(end-start);
         mergeSort.setTimeOfExecution(end-start);
-        algorithmService.save(mergeSort);
+
+        algorithmService.saveAll(Arrays.asList(
+                bubbleSort, selectionSort, insertSort, quickSort, mergeSort
+        ));
     }
 
     public int[] createArray(){
