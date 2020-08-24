@@ -8,6 +8,7 @@ public class SortingAlgorithms {
 
     //Timer timer = new Timer();
 
+    //bubbleSort
     public long bubbleSort(int[] arr){
         long start = System.currentTimeMillis();
         for (int i=0; i<arr.length; i++){
@@ -19,6 +20,8 @@ public class SortingAlgorithms {
         System.out.println(end-start);
         return end-start;
     }
+
+    //selectionSort
     public long selectionSort(int[] arr){
         long start = System.currentTimeMillis();
         for (int i=0;i <arr.length; i++){
@@ -32,6 +35,8 @@ public class SortingAlgorithms {
         System.out.println(end-start);
         return end-start;
     }
+
+    //insertSort
     public long insertSort(int[] arr){
         long start = System.currentTimeMillis();
         for (int i=1; i<arr.length; i++){
@@ -47,6 +52,8 @@ public class SortingAlgorithms {
         System.out.println(end-start);
         return end-start;
     }
+
+    //quickSort
     public void quicksort(int[] arr, int left, int right){
         if (left>=right){
             return ;
@@ -74,8 +81,39 @@ public class SortingAlgorithms {
         }
         return left;
     }
-//    public int[] mergeSort(int arr[],int lo, int n){
-//    }
+
+    //mergeSort
+    public void mergeSort(int arr[],int lo, int n){
+        int low = lo;
+        int high = n;
+
+        if (low>=high){
+            return;
+        }
+
+        int middle = (low + high)/2;
+
+        mergeSort(arr,low, middle);
+        mergeSort(arr,middle+1, high);
+
+        int low_end = middle;
+        int high_start= middle +1;
+
+        while ((lo<=low_end)&&(high_start<=high)){
+            if (arr[low] < arr[high_start]){
+                low++;
+            }else {
+                int temp = arr[high_start];
+                for (int k=high_start-1; k>=low; k--){
+                    arr[k+1]= arr[k];
+                }
+                arr[low] =temp;
+                low++;
+                low_end++;
+                high_start++;
+            }
+        }
+    }
 
     public void swap(int leftIndex, int rightIndex, int[] arr){
         int temp = arr[leftIndex];
