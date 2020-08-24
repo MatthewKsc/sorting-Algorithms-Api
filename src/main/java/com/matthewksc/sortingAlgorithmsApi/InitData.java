@@ -25,6 +25,10 @@ public class InitData {
         Algorithm selectionSort = new Algorithm("Selection Sort");
         selectionSort.setTimeOfExecution(sortingAlgorithms.selectionSort(createArray()));
         algorithmService.save(selectionSort);
+
+        Algorithm insertSort= new Algorithm("Insert Sort");
+        insertSort.setTimeOfExecution(sortingAlgorithms.insertSort(createArray()));
+        algorithmService.save(insertSort);
     }
 
     public int[] createArray(){

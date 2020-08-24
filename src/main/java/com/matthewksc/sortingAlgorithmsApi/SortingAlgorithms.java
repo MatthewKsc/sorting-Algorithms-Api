@@ -30,8 +30,21 @@ public class SortingAlgorithms {
         System.out.println(end-start);
         return end-start;
     }
-//    public int[] insertSort(int[] arr){
-//    }
+    public long insertSort(int[] arr){
+        long start = System.currentTimeMillis();
+        for (int i=1; i<arr.length; i++){
+            int j=i;
+            int holder = arr[i];
+            while (j>0 && arr[j-1]>holder){
+                arr[j]= arr[j-1];
+                j--;
+            }
+            arr[j]= holder;
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+        return end-start;
+    }
 //    public int[] quicksort(int arr[], int left, int right){
 //    }
 //    public int[] mergeSort(int arr[],int lo, int n){
