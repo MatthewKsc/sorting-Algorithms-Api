@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class InitData {
 
-    private static int arraySize=1000;
+    private static int arraySize=10000;
     private SortingAlgorithms sortingAlgorithms;
     private AlgorithmService algorithmService;
 
@@ -29,6 +29,16 @@ public class InitData {
         Algorithm insertSort= new Algorithm("Insert Sort");
         insertSort.setTimeOfExecution(sortingAlgorithms.insertSort(createArray()));
         algorithmService.save(insertSort);
+
+        Algorithm quickSort= new Algorithm("Quick Sort");
+        int[] arrayToQuickSort = createArray();
+        long start = System.currentTimeMillis();
+        sortingAlgorithms.quicksort(arrayToQuickSort, 0, arrayToQuickSort.length-1);
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+        quickSort.setTimeOfExecution(end-start);
+        algorithmService.save(quickSort);
+
     }
 
     public int[] createArray(){

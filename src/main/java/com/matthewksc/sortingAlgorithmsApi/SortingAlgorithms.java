@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class SortingAlgorithms {
 
+    //Timer timer = new Timer();
+
     public long bubbleSort(int[] arr){
         long start = System.currentTimeMillis();
         for (int i=0; i<arr.length; i++){
@@ -45,8 +47,33 @@ public class SortingAlgorithms {
         System.out.println(end-start);
         return end-start;
     }
-//    public int[] quicksort(int arr[], int left, int right){
-//    }
+    public void quicksort(int[] arr, int left, int right){
+        if (left>=right){
+            return ;
+        }
+        int pivot = arr[(left+right)/2];
+        int index = partition(arr, left, right, pivot);
+        quicksort(arr, left, index-1);
+        quicksort(arr, index, right);
+    }
+
+    private int partition(int[] arr, int left, int right, int pivot){
+        while (left<= right){
+            while (arr[left]<pivot){
+                left++;
+            }
+
+            while (arr[right]>pivot){
+                right--;
+            }
+            if (left<=right){
+                swap(left, right, arr);
+                left++;
+                right--;
+            }
+        }
+        return left;
+    }
 //    public int[] mergeSort(int arr[],int lo, int n){
 //    }
 
