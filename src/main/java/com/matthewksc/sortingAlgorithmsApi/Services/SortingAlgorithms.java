@@ -1,15 +1,19 @@
 package com.matthewksc.sortingAlgorithmsApi.Services;
 
-
 import com.matthewksc.sortingAlgorithmsApi.Timer;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SortingAlgorithms {
 
+    /*
+    instance of Timer class to get time of execution
+    in 3 algorithms: bubbleSort, selectionSort, insertSort
+    only in those 3 algorithms we can make return type
+    because their are not recursive
+    */
+
     Timer timer = new Timer();
-    private long start;
-    private long end;
 
     //bubbleSort
     public long bubbleSort(int[] arr){
@@ -61,6 +65,7 @@ public class SortingAlgorithms {
         quicksort(arr, index, right);
     }
 
+    //method for quicksort
     private int partition(int[] arr, int left, int right, int pivot){
         while (left<= right){
             while (arr[left]<pivot){
@@ -112,6 +117,7 @@ public class SortingAlgorithms {
         }
     }
 
+    //method to swap two index's in specific array
     public void swap(int leftIndex, int rightIndex, int[] arr){
         int temp = arr[leftIndex];
         arr[leftIndex]= arr[rightIndex];
