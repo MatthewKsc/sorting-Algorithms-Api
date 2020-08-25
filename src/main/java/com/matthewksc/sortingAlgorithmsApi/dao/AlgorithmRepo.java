@@ -1,6 +1,6 @@
-package com.matthewksc.sortingAlgorithmsApi;
+package com.matthewksc.sortingAlgorithmsApi.dao;
 
-import com.matthewksc.sortingAlgorithmsApi.Algorithm;
+import com.matthewksc.sortingAlgorithmsApi.dao.Algorithm;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

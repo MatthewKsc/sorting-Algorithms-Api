@@ -1,4 +1,4 @@
-package com.matthewksc.sortingAlgorithmsApi;
+package com.matthewksc.sortingAlgorithmsApi.dao;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

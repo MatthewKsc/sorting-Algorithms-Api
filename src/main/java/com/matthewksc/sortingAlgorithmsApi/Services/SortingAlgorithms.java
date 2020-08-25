@@ -1,30 +1,30 @@
-package com.matthewksc.sortingAlgorithmsApi;
+package com.matthewksc.sortingAlgorithmsApi.Services;
 
 
+import com.matthewksc.sortingAlgorithmsApi.Timer;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SortingAlgorithms {
 
-    //Timer timer = new Timer();
+    Timer timer = new Timer();
     private long start;
     private long end;
 
     //bubbleSort
     public long bubbleSort(int[] arr){
-        start = System.currentTimeMillis();
+        timer.startTimer();
         for (int i=0; i<arr.length; i++){
             for (int y=0; y<arr.length-1; y++){
                 if (arr[y]>arr[y+1]) swap(y, y+1, arr);
             }
         }
-        end = System.currentTimeMillis();
-        return end-start;
+        return timer.getTime();
     }
 
     //selectionSort
     public long selectionSort(int[] arr){
-        start = System.currentTimeMillis();
+        timer.startTimer();
         for (int i=0;i <arr.length; i++){
             int min=i;
             for (int y=i; y<arr.length; y++){
@@ -32,13 +32,12 @@ public class SortingAlgorithms {
             }
             swap(i, min, arr);
         }
-        end = System.currentTimeMillis();
-        return end-start;
+        return timer.getTime();
     }
 
     //insertSort
     public long insertSort(int[] arr){
-        start = System.currentTimeMillis();
+        timer.startTimer();
         for (int i=1; i<arr.length; i++){
             int j=i;
             int holder = arr[i];
@@ -48,8 +47,7 @@ public class SortingAlgorithms {
             }
             arr[j]= holder;
         }
-        end = System.currentTimeMillis();
-        return end-start;
+        return timer.getTime();
     }
 
     //quickSort
