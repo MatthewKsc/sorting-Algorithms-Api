@@ -16,7 +16,7 @@
         setup();
 
         async function setup() {
-            var ctx = document.getElementById('graph').getContext('2d');
+            const ctx = document.getElementById('graph').getContext('2d');
             const sortingResults = await getAlgoInfo();
             const myChart = new Chart(ctx, {
             type: 'radar',
