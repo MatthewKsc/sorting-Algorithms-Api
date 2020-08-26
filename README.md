@@ -1,20 +1,20 @@
-#Algorithms Api
+# Algorithms Api
 Application written mainly in Java with usage of Spring Boot, 
 MySQL, JavaScript, and a little of html with css.Main logic of this project
 is to see difference between sorting algorithms and show results with some kind
 of graph.To make application
 going on your machine you need to make the following steps:
 <br>
-1.Change url links in Algorithms.html to your port
-(if you didn't change default port of spring you can leave that as it is), 
-<br>
-2.Change url in MainController.java to url of your Algorithms.html,
-<br>
-3.Run Spring Boot Api,
-<br>
-4.Open Algorithms.html to see results.
+  1.Change url links in Algorithms.html to your port
+  (if you didn't change default port of spring you can leave that as it is), 
+  <br>
+  2.Change url in MainController.java to url of your Algorithms.html,
+  <br>
+  3.Run Spring Boot Api,
+  <br>
+  4.Open Algorithms.html to see results.
 
-##Folders and explanation
+##  Folders and explanation
 
 * `src/main/java/com/matthewksc/sortingAlgorithmsApi/Services` -service to make operations 
 on data and class with sorting algorithm's methods,
@@ -24,7 +24,6 @@ send data in json to web,
 * `src/main/java/com/matthewksc/sortingAlgorithmsApi/InitData.java` - init of data,
 * `src/main/java/com/matthewksc/sortingAlgorithmsApi/Timer.java` - Timer class to time execution of sorting algorithm's.
 
-##Api in brower
-
-![Alt text](https://github.com/MatthewKsc/sorting-Algorithms-Api/tree/master/src/main/resources/static/api.png?raw=true "api")
+##  Api in brower
+![Alt text](https://github.com/MatthewKsc/sorting-Algorithms-Api/blob/master/src/main/resources/static/api.png?raw=true)
 <br>
